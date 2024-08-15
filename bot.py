@@ -1154,7 +1154,7 @@ async def bard_blessing(interaction: discord.Interaction, member: discord.Member
         await historychannel.send(embed=historyembed)
 
         if enchanted == 1:
-            await asyncio.sleep(120)
+            await asyncio.sleep(300)
         elif enchanted == 2:
             await asyncio.sleep(300)
         else:
@@ -1625,8 +1625,8 @@ async def fae_blossoms(interaction : discord.Interaction):
     if cooldownU <= timestamproundedf(0):
         await interaction.response.defer()
         person = interaction.user
-        cdvar1 = timestamproundedf(60*15)
-        v1 = View(timeout=60*15)
+        cdvar1 = timestamproundedf(60*10)
+        v1 = View(timeout=60*10)
         b1 = Button(label='🌸')
         uniqueID = str(uuid.uuid4())
         async def b1_callback(interaction2 : discord.Interaction):
@@ -1689,7 +1689,7 @@ async def fae_blossoms(interaction : discord.Interaction):
                 sqlquery = f"UPDATE cooldowntb SET unix = {timestamproundedf(cooldown)} WHERE user_id={interaction.user.id} AND cooldown_name='{commandName}'"
                 await db.execute(sqlquery)
                 await db.commit()
-        await asyncio.sleep(60*15)
+        await asyncio.sleep(60*10)
         getChan = interaction.guild.get_channel(channelID)
         getMes = await getChan.fetch_message(messageID)
         await getMes.delete()
