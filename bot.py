@@ -1674,7 +1674,7 @@ async def fae_blossoms(interaction : discord.Interaction):
         data[uniqueID] = []
         json.dump(data, open("smallblossom.json", "w"), indent=4)
         
-        lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a Small Blossom! Click the 🌸 to get 125 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🌸 Small Blossom Drop!', description='Click the 🌸 button to get 125 exp. But, there is a 15 minute time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
+        lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a Small Blossom! Click the 🌸 to get 125 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🌸 Small Blossom Drop!', description='Click the 🌸 button to get 125 exp. But, there is a 10 minute time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
         historychannel = bot.get_channel(1244686875277398036)
         historyEffected = None
         historyEffectedID = None
