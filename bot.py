@@ -1706,7 +1706,7 @@ async def fae_megablossoms(interaction : discord.Interaction):
             member = 0
             return
     
-    cooldown = 60*180
+    cooldown = 60*60
     commandName = 'fae_blossoms'
     classNamePlural = 'fae'
     forClass = 5
