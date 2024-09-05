@@ -1791,7 +1791,7 @@ async def fae_megablossoms(interaction : discord.Interaction):
                 sqlquery = f"UPDATE cooldowntb SET unix = {timestamproundedf(cooldown)} WHERE user_id={interaction.user.id} AND cooldown_name='{commandName}'"
                 await db.execute(sqlquery)
                 await db.commit()
-        await asyncio.sleep(3)
+        await asyncio.sleep(10)
         await lel.delete()
     else:
         await interaction.response.defer(ephemeral=True)
