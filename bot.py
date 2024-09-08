@@ -1696,7 +1696,7 @@ async def fae_blossoms(interaction : discord.Interaction):
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 
-@bot.tree.command(name="fae_megablossoms", description="[FEYLIGHTS ONLY] Drop a mega blossom.")
+@bot.tree.command(name="fae_megablossoms", description="[FAE ONLY] Drop a mega blossom.")
 async def fae_megablossoms(interaction : discord.Interaction):
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
     if interaction.user.bot:
