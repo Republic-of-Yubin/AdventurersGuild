@@ -1607,7 +1607,6 @@ async def fae_blossoms(interaction : discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         await interaction.followup.send(content=f'<@{interaction.user.id}>, this ability is for {classNamePlural} only!', ephemeral=True)
         return
-    enchanted = int(str(currentclass[0]).count(str(forClass)))
     async with aiosqlite.connect("cooldowns.sqlite") as db:
         query = f"SELECT unix FROM cooldowntb WHERE user_id = {interaction.user.id} AND cooldown_name='{commandName}'"
         async with db.execute(query) as cursor:
@@ -1676,8 +1675,6 @@ async def fae_blossoms(interaction : discord.Interaction):
         
         lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a Small Blossom! Click the 🌸 to get 125 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🌸 Small Blossom Drop!', description='Click the 🌸 button to get 125 exp. But, there is a 10 minute time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
         historychannel = bot.get_channel(1244686875277398036)
-        historyEffected = None
-        historyEffectedID = None
         historyembed = discord.Embed(title=f"{commandName}", description=f"<@{interaction.user.id}> ({interaction.user.id}) did {commandName} - in <#{interaction.channel.id}> ({interaction.channel.id})")
         historyembed.set_footer(text=f"{datetime.datetime.now()}")
         await historychannel.send(embed=historyembed)
@@ -1703,11 +1700,10 @@ async def fae_blossoms(interaction : discord.Interaction):
 async def fae_megablossoms(interaction : discord.Interaction):
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
     if interaction.user.bot:
-            member = 0
             return
-    
+
     cooldown = 60*60
-    commandName = 'fae_blossoms'
+    commandName = 'fae_megablossoms'
     classNamePlural = 'fae'
     forClass = 5
 
