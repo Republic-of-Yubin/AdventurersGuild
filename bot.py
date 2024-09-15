@@ -739,7 +739,7 @@ See you inside!'''
                 sqlquery = f"UPDATE exp SET cooldown = {timestamproundedf(0)} WHERE user_id={message.author.id} AND guild_id = {message.guild.id}"
                 await db.execute(sqlquery)
                 await db.commit()
-            if int(message.channel.id) in doubleChannels or int(message.channel.category.id) in doubleCategory:
+            if int(message.channel.id) in doubleChannels or int(message.channel.category.id) in doubleCategorys:
                 async with aiosqlite.connect("exp.sqlite") as db:
                     sqlquery = f"UPDATE exp SET xp = {oldLevel[0] + (expPerCooldown*2)} WHERE user_id={message.author.id} AND guild_id = {message.guild.id}"
                     await db.execute(sqlquery)
