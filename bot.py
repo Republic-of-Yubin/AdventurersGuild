@@ -48,7 +48,6 @@ channels = {"spirit":1234251593700868186, "job_change":1213218513221718096, "lev
 excludedChannels = [1193533785908715600, 1216723387200569437, 1179174879845683221, 1263945044369342506]
 excludedCategorys = [1193631336406200420, 1193631336406200420]
 doubleChannels = []
-doubleCategorys = [1263944821719040182]
 levelroles = {"1": 1241664860618752112,
 "5": 1241664865802780812,
 "10":1241664867232907286,
@@ -750,21 +749,6 @@ See you inside!'''
                     await db.execute(sqlquery)
                     await db.commit()
             
-          if int(oldLevel[1])+cooldownInSeconds < timestamproundedf(0):
-            async with aiosqlite.connect("exp.sqlite") as db:
-                sqlquery = f"UPDATE exp SET cooldown = {timestamproundedf(0)} WHERE user_id={message.author.id} AND guild_id = {message.guild.id}"
-                await db.execute(sqlquery)
-                await db.commit()
-            if message.channel.category.id in doubleCategorys:
-                async with aiosqlite.connect("exp.sqlite") as db:
-                    sqlquery = f"UPDATE exp SET xp = {oldLevel[0] + (expPerCooldown*1.5)} WHERE user_id={message.author.id} AND guild_id = {message.guild.id}"
-                    await db.execute(sqlquery)
-                    await db.commit()
-            else:
-                async with aiosqlite.connect("exp.sqlite") as db:
-                    sqlquery = f"UPDATE exp SET xp = {oldLevel[0] + expPerCooldown} WHERE user_id={message.author.id} AND guild_id = {message.guild.id}"
-                    await db.execute(sqlquery)
-                    await db.commit()
 
             if getLevel(oldLevel[0]) != getLevel(oldLevel[0] + expPerCooldown):
                 newLevel = getLevel(oldLevel[0] + expPerCooldown)[0]
