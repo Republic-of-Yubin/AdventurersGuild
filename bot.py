@@ -690,7 +690,7 @@ Just **sign the Aplication below** and I will take care of the rest!
 
 Step through the doors and start earning your rewards today. The Republic awaits your rise.
 **~ See you inside!**''', 
-            view=StartSelectView()) 
+            view=StartSelectView() 
             async with ClientSession() as session:
                     webhook = SyncWebhook.from_url(WEBHOOK_URL) # Initializing webhook
                     webhook.send(content=level10Message, username="[Guild Manager] Ron", avatar_url="https://i.imgur.com/nK9z8U9.png") # Executing webhook.
