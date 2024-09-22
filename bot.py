@@ -2713,7 +2713,7 @@ async def level(interaction : discord.Interaction):
     embedSent = discord.Embed(title=f"{interaction.user.display_name}", description=f'''> Class: {getClass(result[1])[0]} {getClass(result[1])[1]} {getClass(result[1])[2]}\n# Level {getLevel(result[0])[0]} ({round(find_percentage(result[0], getLevel(result[0])[2], getLevel(result[0])[1]), 2)}%)\n\nApproximately `{str(math.ceil((expLeft/expPerCooldown)))}` more messages to reach level {getLevel(result[0])[0]+1}.''')
     await interaction.followup.send(embed=embedSent)
 
-@bot.tree.command(name="AG_cooldown", description="[Council] Reset the cooldown.")
+@bot.tree.command(name="ag_cooldown", description="[Council] Reset the cooldown.")
 async def reset_cd(interaction: discord.Interaction, member:discord.Member):
     if member is None:
         await interaction.response.defer()
@@ -2738,7 +2738,7 @@ async def reset_cd(interaction: discord.Interaction, member:discord.Member):
 
     await interaction.followup.send(f"Did it, reset the cooldowns of <@{member.id}>!", ephemeral=True)
 
-@bot.tree.command(name="AG_resetduels", description="[Council] Reset duels.")
+@bot.tree.command(name="ag_resetduels", description="[Council] Reset duels.")
 async def reset(interaction: discord.Interaction):
 
     await interaction.response.defer(ephemeral=True)
@@ -2794,7 +2794,7 @@ async def reset(interaction: discord.Interaction):
 
     m1 = await interaction.followup.send(f"Are you sure? click u sure", view=v1, ephemeral=True)
 
-@bot.tree.command(name="AG_boost", description="[Council] Add +30 level.")
+@bot.tree.command(name="ag_boost", description="[Council] Add +30 level.")
 async def stage_up(interaction: discord.Interaction, member:discord.Member):
     if member is None:
         await interaction.response.defer()
@@ -2829,7 +2829,7 @@ async def stage_up(interaction: discord.Interaction, member:discord.Member):
 
     await interaction.followup.send(f"Did it, staged up <@{member.id}>!", ephemeral=True)
 
-@bot.tree.command(name="AG_resetlevel", description="[ADMINS ONLY] Reset level.")
+@bot.tree.command(name="ag_resetlevel", description="[ADMINS ONLY] Reset level.")
 async def reset_level(interaction: discord.Interaction, member:discord.Member):
     await interaction.response.defer(ephemeral=True)
     if member is None:
@@ -2883,7 +2883,7 @@ async def reset_level(interaction: discord.Interaction, member:discord.Member):
     await interaction.followup.send("Did it, reset!", ephemeral=True)
 
 
-@bot.tree.command(name="AG_roles", description="[Council] Give a user their appropriate AG roles.")
+@bot.tree.command(name="ag_roles", description="[Council] Give a user their appropriate AG roles.")
 async def aga_roles(interaction: discord.Interaction, member: discord.Member):
     await interaction.response.defer(ephemeral=True)
     admins = [816769793231028244, 242681702512721931]
@@ -2949,7 +2949,7 @@ async def aga_roles(interaction: discord.Interaction, member: discord.Member):
                     
         
 
-@bot.tree.command(name="AG_level", description="[Council] Set a users level.")
+@bot.tree.command(name="ag_level", description="[Council] Set a users level.")
 async def config_level(interaction: discord.Interaction, member:discord.Member, set:int):
     await interaction.response.defer(ephemeral=True)
     if member is None:
