@@ -670,22 +670,29 @@ Here's a little paper explaining the classes. Choose wisely, the only way back i
 [Adventurers Guild Classes](https://i.imgur.com/8kwBBAN.jpg)'''
             async with ClientSession() as session:
                     webhook = SyncWebhook.from_url(WEBHOOK_URL) # Initializing webhook
-                    webhook.send(content=level10Message, username="[Guild Manager] Ron", avatar_url="https://media.discordapp.net/attachments/1213218623301091369/1221111865166401556/Guild_Master_Ron_mid.png?ex=6611640b&is=65feef0b&hm=4c9d52c57c6f20d6b15b3f8f3571787f3c619cae3f08163c4bf595df893b90f0&=&format=webp&quality=lossless&width=240&height=240") # Executing webhook.
+                    webhook.send(content=level10Message, username="[Guild Manager] Ron", avatar_url="https://i.imgur.com/nK9z8U9.png") # Executing webhook.
             await asyncio.sleep(1)
             await thisChannel.send("Choose your class.", view=ClassSelectView())
             return
         if message.author.id in [242681702512721931, 816769793231028244] and message.content == "!!rolestartembed":
             thisChannel = message.channel
             WEBHOOK_URL = 'https://discord.com/api/webhooks/1234262232771203143/wkI7T1PU6jFNApytZFFSbY0QKMmttUj7dx8x0RoAsrYOcSxS61jO1n4kAuUD4jGeencF'
-            level10Message = f'''Hello there, welcome to the **Adventurers Guild**! My name is Ron, I'm the Guild Manager.
-I'm guessing you're here to join the Guild? Great, just sign application below and I will take care of the rest.
-Once you joined the Guild you will start gaining experience to unlock exciting classes, all with special perks and abilities! 
-Are you ready to start your adventure?
-            
-See you inside!'''
+            level10Message = f'''# 🧝‍♀️  Welcome to the Adventurers Guild! 🧝‍♀️
+
+** **
+Ah, a new face! Welcome, welcome!
+**I'm Ron, the Guild Manager.**
+
+By joining the **Adventurers Guild**, you will start **earning experience through chatting**.
+Reach milestones and unlock **special classes** with **unique abilities**.
+
+Just **sign the Aplication below** and I will take care of the rest!
+
+Step through the doors and start earning your rewards today. The Republic awaits your rise.
+**~ See you inside!**'''
             async with ClientSession() as session:
                     webhook = SyncWebhook.from_url(WEBHOOK_URL) # Initializing webhook
-                    webhook.send(content=level10Message, username="[Guild Manager] Ron", avatar_url="https://media.discordapp.net/attachments/1213218623301091369/1221111865166401556/Guild_Master_Ron_mid.png?ex=6611640b&is=65feef0b&hm=4c9d52c57c6f20d6b15b3f8f3571787f3c619cae3f08163c4bf595df893b90f0&=&format=webp&quality=lossless&width=240&height=240") # Executing webhook.
+                    webhook.send(content=level10Message, username="[Guild Manager] Ron", avatar_url="https://i.imgur.com/nK9z8U9.png") # Executing webhook.
             await asyncio.sleep(1)
             await thisChannel.send("Adventurers Guild Member Application:", view=StartSelectView())
             return
