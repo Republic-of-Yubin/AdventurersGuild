@@ -1533,7 +1533,7 @@ async def mystic_spirits(interaction: discord.Interaction, member: typing.Option
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 #spirit_leaverealm 
-@bot.tree.command(name="/human", description="[Everyone] Leave the Spirit Realm, turning back human.")
+@bot.tree.command(name="human", description="[Everyone] Leave the Spirit Realm, turning back human.")
 async def human(interaction:discord.Interaction, member: typing.Optional[discord.Member]):
     await interaction.response.defer(ephemeral=True)
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
