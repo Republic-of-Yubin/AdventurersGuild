@@ -689,7 +689,8 @@ Reach milestones and unlock **special classes** with **unique abilities**.
 Just **sign the Aplication below** and I will take care of the rest!
 
 Step through the doors and start earning your rewards today. The Republic awaits your rise.
-**~ See you inside!**'''
+**~ See you inside!**''', 
+            view=StartSelectView()) 
             async with ClientSession() as session:
                     webhook = SyncWebhook.from_url(WEBHOOK_URL) # Initializing webhook
                     webhook.send(content=level10Message, username="[Guild Manager] Ron", avatar_url="https://i.imgur.com/nK9z8U9.png") # Executing webhook.
@@ -796,7 +797,7 @@ bot = MyClient(intents=intents)
 
 # category: commands
 
-@bot.tree.command(name="magician_silence", description="[MAGICIANS ONLY] Silence someone for sometime.")
+@bot.tree.command(name="magician_silence", description="[Magician] Silence a User.")
 @app_commands.describe(member="The member to silence")
 @app_commands.rename(member='member')
 async def magician_silence(interaction: discord.Interaction, member: discord.Member):
@@ -901,7 +902,7 @@ async def magician_silence(interaction: discord.Interaction, member: discord.Mem
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 
-@bot.tree.command(name="jester_taunt", description="[JESTERS ONLY] Taunt someone for sometime.")
+@bot.tree.command(name="jester_taunt", description="[Jester] Taunt a user.")
 @app_commands.describe(member="The member to taunt")
 @app_commands.rename(member='member')
 async def jester_taunt(interaction:discord.Interaction, member: discord.Member):
@@ -1015,7 +1016,7 @@ async def jester_taunt(interaction:discord.Interaction, member: discord.Member):
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
     
-@bot.tree.command(name="jester_trickery", description="[TRICKSTER ONLY] Trick someone for more time on them.")
+@bot.tree.command(name="jester_trickery", description="[Trickster] Cast Trickery on a user, extending current ability duration on them.")
 @app_commands.describe(member="The member to trick")
 @app_commands.rename(member='member')
 async def jester_trickery(interaction: discord.Interaction, member: discord.Member):
@@ -1098,7 +1099,7 @@ async def jester_trickery(interaction: discord.Interaction, member: discord.Memb
 
 
 
-@bot.tree.command(name="bard_blessing", description="[BARDS ONLY] Color someone for sometime.")
+@bot.tree.command(name="bard_blessing", description="[Bard] Bless a user with a colorful surprise!")
 @app_commands.describe(member="The member to color")
 @app_commands.rename(member='member')
 async def bard_blessing(interaction: discord.Interaction, member: discord.Member, color: typing.Literal['Bards Blessing Red', 'Bards Blessing Magenta', 'Bards Blessing Cyan', 'Bards Blessing Green', 'Bards Blessing Blue', 'Bards Blessing Yellow']):
@@ -1178,7 +1179,7 @@ async def bard_blessing(interaction: discord.Interaction, member: discord.Member
 
 
 
-@bot.tree.command(name="bard_customs", description="[BARDS ONLY] Color someone something custom for sometime.")
+@bot.tree.command(name="bard_customs", description="[Bard] Custom Color Blessing.")
 @app_commands.describe(member="The member to color")
 @app_commands.describe(color="The hex code of the color, example: #FFFFFF")
 @app_commands.rename(member='member')
@@ -1290,7 +1291,7 @@ async def bard_customs(interaction: discord.Interaction, member: discord.Member,
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 
-@bot.tree.command(name="pirate_parrot", description="[PIRATES ONLY] Make your pirate talk.")
+@bot.tree.command(name="pirate_parrot", description="[Pirate] Let your Parrot talk!.")
 @app_commands.describe(fonts="Which font? (Choose the first 'THIS' if you are not enchanted.)")
 @app_commands.rename(fonts='font')
 @app_commands.describe(message="What's your message?")
@@ -1379,7 +1380,7 @@ async def pirate_parrot(interaction:discord.Interaction, fonts: typing.Optional[
         return
 
 
-@bot.tree.command(name="pirate_2choices", description="[PIRATES ONLY] Yes or no?.")
+@bot.tree.command(name="pirate_2choices", description="[Pirate] Ask your parrot a Yes or No question.")
 @app_commands.describe(question="Ask a yes or no question!")
 @app_commands.rename(question='question')
 async def pirate_2choices(interaction: discord.Interaction, question: typing.Optional[str]):
@@ -1458,7 +1459,7 @@ async def pirate_2choices(interaction: discord.Interaction, question: typing.Opt
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 
-@bot.tree.command(name="mystic_spirits", description="[MYSTIC ONLY] Become a spirit.")
+@bot.tree.command(name="mystic_spirits", description="[Mystic] Ascent to the Spirit Realm.")
 async def mystic_spirits(interaction: discord.Interaction, member: typing.Optional[discord.Member]):
     await interaction.response.defer(ephemeral=True)
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
@@ -1532,8 +1533,8 @@ async def mystic_spirits(interaction: discord.Interaction, member: typing.Option
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 #spirit_leaverealm 
-@bot.tree.command(name="mystic_humans", description="Turn back to human form and leave the Spirit Realm.")
-async def mystic_humans(interaction:discord.Interaction, member: typing.Optional[discord.Member]):
+@bot.tree.command(name="/human", description="[Everyone] Leave the Spirit Realm, turning back human.")
+async def human(interaction:discord.Interaction, member: typing.Optional[discord.Member]):
     await interaction.response.defer(ephemeral=True)
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
     if interaction.user.bot:
@@ -1543,7 +1544,7 @@ async def mystic_humans(interaction:discord.Interaction, member: typing.Optional
         member = interaction.user
 
     cooldown = 30
-    commandName = 'mystic_humans'
+    commandName = 'human'
     classNamePlural = 'mystics'
     forClass = 6
 
@@ -1592,7 +1593,7 @@ async def mystic_humans(interaction:discord.Interaction, member: typing.Optional
         return
 
 
-@bot.tree.command(name="fae_blossoms", description="[FAE ONLY] Drop a small blossom.")
+@bot.tree.command(name="fae_blossoms", description="[Fae] Drop a Small Blossom! Granting a small amount of experience for a long time.")
 async def fae_blossoms(interaction : discord.Interaction):
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
     if interaction.user.bot:
@@ -1704,7 +1705,7 @@ async def fae_blossoms(interaction : discord.Interaction):
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 
-@bot.tree.command(name="fae_megablossoms", description="[FAE ONLY] Drop a mega blossom.")
+@bot.tree.command(name="fae_megablossoms", description="[FAE ONLY] Drop a Mega Blossom! Granting a big amount of experience for a short time.")
 async def fae_megablossoms(interaction : discord.Interaction):
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
     if interaction.user.bot:
@@ -1803,7 +1804,7 @@ async def fae_megablossoms(interaction : discord.Interaction):
         return
 
 @app_commands.describe(animal="Only if you are an enchanted Wildshaper!")
-@bot.tree.command(name="wildshaper_morph", description="[WILDSHAPERS ONLY] Morph others or yourself into an animal.")
+@bot.tree.command(name="wildshaper_morph", description="[Wildshaper] Morph a user into a animal!")
 async def wildshaper_morph(interaction : discord.Interaction, member: discord.Member, animal: typing.Optional[typing.Literal['Dog', 'Cat', 'rat', 'Unicorn', 'Pig', 'whale', 'cockroach', 'wolf', 'Tiger', 'Giraffe']]):
     await interaction.response.defer(ephemeral=True)
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
@@ -1931,7 +1932,7 @@ async def wildshaper_morph(interaction : discord.Interaction, member: discord.Me
 
 
 
-@bot.tree.command(name="cleric_healing", description="[CLERICS ONLY] Remove all negative effects")
+@bot.tree.command(name="cleric_healing", description="[Cleric] Remove negative effects from a user.")
 async def cleric_healing(interaction : discord.Interaction, member: discord.Member):
     await interaction.response.defer(ephemeral=True)
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
@@ -2025,7 +2026,7 @@ async def cleric_healing(interaction : discord.Interaction, member: discord.Memb
         await interaction.followup.send(content=f'On cooldown! Try again at <t:{cooldownU}:F>, <t:{cooldownU}:R>.', ephemeral=True)
         return
 
-@bot.tree.command(name="cleric_grace", description="[SAGES ONLY] Give sage's grace.")
+@bot.tree.command(name="cleric_grace", description="[Sage] Bless someone with Sages Grace. Making them immune to negative status effects.")
 async def cleric_grace(interaction : discord.Interaction, member: discord.Member):
     await interaction.response.defer(ephemeral=True)
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
@@ -2712,7 +2713,7 @@ async def level(interaction : discord.Interaction):
     embedSent = discord.Embed(title=f"{interaction.user.display_name}", description=f'''> Class: {getClass(result[1])[0]} {getClass(result[1])[1]} {getClass(result[1])[2]}\n# Level {getLevel(result[0])[0]} ({round(find_percentage(result[0], getLevel(result[0])[2], getLevel(result[0])[1]), 2)}%)\n\nApproximately `{str(math.ceil((expLeft/expPerCooldown)))}` more messages to reach level {getLevel(result[0])[0]+1}.''')
     await interaction.followup.send(embed=embedSent)
 
-@bot.tree.command(name="aga_resetcd", description="[ADMINS ONLY] Reset the cooldown.")
+@bot.tree.command(name="AG_cooldown", description="[Council] Reset the cooldown.")
 async def reset_cd(interaction: discord.Interaction, member:discord.Member):
     if member is None:
         await interaction.response.defer()
@@ -2737,7 +2738,7 @@ async def reset_cd(interaction: discord.Interaction, member:discord.Member):
 
     await interaction.followup.send(f"Did it, reset the cooldowns of <@{member.id}>!", ephemeral=True)
 
-@bot.tree.command(name="aga_resetduels", description="[ADMINS ONLY] Reset duels.")
+@bot.tree.command(name="AG_resetduels", description="[Council] Reset duels.")
 async def reset(interaction: discord.Interaction):
 
     await interaction.response.defer(ephemeral=True)
@@ -2791,9 +2792,9 @@ async def reset(interaction: discord.Interaction):
     b1.callback = b1callback
     v1.add_item(b1)
 
-    m1 = await interaction.followup.send(f"You sure? click u sure", view=v1, ephemeral=True)
+    m1 = await interaction.followup.send(f"Are you sure? click u sure", view=v1, ephemeral=True)
 
-@bot.tree.command(name="aga_stageup", description="[ADMINS ONLY] Stage up the user.")
+@bot.tree.command(name="AG_boost", description="[Council] Add +30 level.")
 async def stage_up(interaction: discord.Interaction, member:discord.Member):
     if member is None:
         await interaction.response.defer()
@@ -2828,7 +2829,7 @@ async def stage_up(interaction: discord.Interaction, member:discord.Member):
 
     await interaction.followup.send(f"Did it, staged up <@{member.id}>!", ephemeral=True)
 
-@bot.tree.command(name="aga_resetlevel", description="[ADMINS ONLY] Reset level.")
+@bot.tree.command(name="AG_resetlevel", description="[ADMINS ONLY] Reset level.")
 async def reset_level(interaction: discord.Interaction, member:discord.Member):
     await interaction.response.defer(ephemeral=True)
     if member is None:
@@ -2882,7 +2883,7 @@ async def reset_level(interaction: discord.Interaction, member:discord.Member):
     await interaction.followup.send("Did it, reset!", ephemeral=True)
 
 
-@bot.tree.command(name="aga_roles", description="[ADMINS ONLY] Give back roles.")
+@bot.tree.command(name="AG_roles", description="[Council] Give a user their appropriate AG roles.")
 async def aga_roles(interaction: discord.Interaction, member: discord.Member):
     await interaction.response.defer(ephemeral=True)
     admins = [816769793231028244, 242681702512721931]
@@ -2948,7 +2949,7 @@ async def aga_roles(interaction: discord.Interaction, member: discord.Member):
                     
         
 
-@bot.tree.command(name="aga_setlevel", description="[ADMINS ONLY] Set level.")
+@bot.tree.command(name="AG_level", description="[Council] Set a users level.")
 async def config_level(interaction: discord.Interaction, member:discord.Member, set:int):
     await interaction.response.defer(ephemeral=True)
     if member is None:
