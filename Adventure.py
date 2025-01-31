@@ -17,11 +17,11 @@ def getEmoji(id:int):
     return "<"
 
 def maxLevel():
-    return 100
+    return 300
 
 def getLimits():
     limits = [(0, 0)]
-    maxLimit = 100
+    maxLimit = 300
     for x in range(maxLimit):
         limits.append((limits[len(limits)-1][1], (((x) * 400) + 75)+(limits[len(limits)-1][1])))
     limits.remove((0, 0))
@@ -29,7 +29,7 @@ def getLimits():
 
 def getLevel(expNumber):
     limits = [(0, 0)]
-    maxLimit = 100
+    maxLimit = 300
     for x in range(maxLimit):
         limits.append((limits[len(limits)-1][1], (((x) * 400) + 75)+(limits[len(limits)-1][1])))
     limits.remove((0, 0))

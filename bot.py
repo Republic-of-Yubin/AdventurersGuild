@@ -37,18 +37,19 @@ intents.members = True
 intents.reactions = True
 
 # variables
-#test variables on test server
+#test variables on test server 
+#Yubin dance ID 1179191011898032261
 #roles = {"guild":1229444878552006708, "silenced":1212840459102064711, "spirit":1224760371915526145, "taunted":1224513474432991324, "enchanted_taunted":1225117686883946563, "enchanted_silenced":1225117688200691936, "trickery":1224519072171954209, "cleric":1222840622214414416, "cleric2":0, "jester":1222840635149778986, "jester2": 1223021547837456394, "magician":1222837868490264636, "magician2":0, "wildshaper":1212840464445743155, "wildshaper2":0, "fae":1212840465100046336, "fae2":0, "mystic":1183898566951981128, "mystic2":0, "pirate":1222255974811701338, "pirate2":0, "bard":1222255705684447303, "bard2":1224521365835747328, "bards_blessing_red":1224521397431435355,"bards_blessing_magenta":1224521391135526912,"bards_blessing_cyan":1224521392817442896, "bards_blessing_green":1224521523793231892, "bards_blessing_blue":1224521395208327259, "bards_blessing_yellow":1224521701208096859, "pig":1224841281843368007, "cat":1224841280387809431, "dog":1224841279113003224, "frog":1224841274478170172, "unicorn":1224841277460316342, "shark":1224858851837218876, "wolf":1224858868027228304, "chick":1221944610545471678, "tiger":1224858866160767116, "sagesgrace":1224863430222282812, "plant-admin":1244657453183008808}
 #emojis = {"magician":"<:MAGE:1224412539602079925>","jester":"<:JESTER:1224412538721009715>","bard":"<:BARD:1224412499106070558>","pirate":"<:PIRATE:1224412559550189669>","fae":"<:FAE:1224412501773389987>","mystic":"<:MYSTIC:1224412558287437834>","wildshaper":"<:WILDHSHAPER:1224412540512239678>","cleric":"<:CLERIC:1224412500465025074>"}
 #channels = {"spirit":1224756963901177896, "job_change":1058517858507833354, "leveling":1225083241912991766}
 
 roles = {"guild":1233907434284781588, "silenced":1233903289045880872, "spirit":1233902805924970598, "taunted":1233907772370976808, "enchanted_taunted":1234248628487327847, "enchanted_silenced":1233903288454221895, "trickery":1233907671770337343, "cleric":1233907164574384199, "cleric2":1233907163827671071, "jester":1233903291851739166, "jester2": 1233903291390361670, "magician":1233903290278740100, "magician2":1233903290442448896, "wildshaper":1233905939124588564, "wildshaper2":1233907163215171604, "fae":1233905936372862986, "fae2":1233905937081831537, "mystic":1233905938302369906, "mystic2":1233905937375563878, "pirate":1233905935513157662, "pirate2":1233905934816772106, "bard":1233905933822722139, "bard2":1233905932296261633, "elder2": 1257301087686230117, "bards_blessing_red":1233903284230815784,"bards_blessing_magenta":1233903284494794823,"bards_blessing_cyan":1233903287162503168, "bards_blessing_green":1233903286457995344, "bards_blessing_blue":1233903285581385789, "bards_blessing_yellow":1233903287745515540, "pig":1233902817807171634, "cat":1233903159047491654, "dog":1233903278400606320, "rat":1233903279499509820, "unicorn":1233903280556347452, "whale":1233903281651056751, "cockroach":1233903282754420856, "wolf":1234249749071396954, "tiger":1234249750438478025, "giraffe":1245083236451880980, "sagesgrace":1233903283668652042, "tspirit":1234536299545890826, "plant-admin":1234236361645494312}
-emojis = {"magician":"<:MAGE:1224412539602079925>","jester":"<:JESTER:1224412538721009715>","bard":"<:BARD:1224412499106070558>","pirate":"<:PIRATE:1224412559550189669>","fae":"<:FAE:1224412501773389987>","mystic":"<:MYSTIC:1224412558287437834>","wildshaper":"<:WILDHSHAPER:1224412540512239678>","cleric":"<:CLERIC:1224412500465025074>", "elder": "<>"}
+emojis = {"magician":"<:MAGE:1332691999467507753>","jester":"<:MYSTIC:1332733073699110922>","bard":"<:BARD:1332691917422460929>","pirate":"<:PIRATE:1332691934849929239>","fae":"<:FAE:1332691924083146784>","mystic":"<:MYSTIC:1332733073699110922>","wildshaper":"<:WILDSHAPER:1332691943163035679>","cleric":"\<:CLERIC:1332691922556424193>", "elder": "<>"}
 channels = {"spirit":1234251593700868186, "job_change":1213218513221718096, "leveling":1243857865886924840}
 excludedChannels = [1193533785908715600, 1216723387200569437, 1179174879845683221, 1263945044369342506]
-excludedCategorys = [1193631336406200420, 1193631336406200420]
-doubleChannels = []
-doubleCategorys = [1263944821719040182]
+excludedCategorys = [1193631336406200420]
+doubleChannels = [1324459249031708793]
+doubleCategorys = []
 levelroles = {"1": 1241664860618752112,
 "5": 1241664865802780812,
 "10":1241664867232907286,
@@ -68,8 +69,8 @@ closedCategorys = []
 
 
 correctwebhookname = 'ADVENTURES GUILD OFFICIAL WEBHOOK [1]'
-expPerCooldown = 45
-cooldownInSeconds = 35
+expPerCooldown = 40
+cooldownInSeconds = 40
 levelToClass = 10
 levelToEnchant = 50
 
@@ -1633,8 +1634,8 @@ async def fae_blossoms(interaction : discord.Interaction):
     if cooldownU <= timestamproundedf(0):
         await interaction.response.defer()
         person = interaction.user
-        cdvar1 = timestamproundedf(60*10)
-        v1 = View(timeout=60*10)
+        cdvar1 = timestamproundedf(60*5)
+        v1 = View(timeout=60*5)
         b1 = Button(label='🌸')
         uniqueID = str(uuid.uuid4())
         async def b1_callback(interaction2 : discord.Interaction):
@@ -1682,7 +1683,7 @@ async def fae_blossoms(interaction : discord.Interaction):
         data[uniqueID] = []
         json.dump(data, open("smallblossom.json", "w"), indent=4)
         
-        lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a Small Blossom! Click the 🌸 to get 125 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🌸 Small Blossom Drop!', description='Click the 🌸 button to get 125 exp. But, there is a 10 minute time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
+        lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a **Small Blossom**! Click the 🌸 to get 125 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🌸 Small Blossom Drop!🌸', description='Click the **button below** to get 125 exp. But, there is a 5 minute time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
         historychannel = bot.get_channel(1244686875277398036)
         historyembed = discord.Embed(title=f"{commandName}", description=f"<@{interaction.user.id}> ({interaction.user.id}) did {commandName} - in <#{interaction.channel.id}> ({interaction.channel.id})")
         historyembed.set_footer(text=f"{datetime.datetime.now()}")
@@ -1695,7 +1696,7 @@ async def fae_blossoms(interaction : discord.Interaction):
                 sqlquery = f"UPDATE cooldowntb SET unix = {timestamproundedf(cooldown)} WHERE user_id={interaction.user.id} AND cooldown_name='{commandName}'"
                 await db.execute(sqlquery)
                 await db.commit()
-        await asyncio.sleep(60*10)
+        await asyncio.sleep(60*5)
         getChan = interaction.guild.get_channel(channelID)
         getMes = await getChan.fetch_message(messageID)
         await getMes.delete()
@@ -1736,11 +1737,15 @@ async def fae_megablossoms(interaction : discord.Interaction):
         query = f"SELECT unix FROM cooldowntb WHERE user_id = {0} AND cooldown_name='{commandName}'"
         async with db.execute(query) as cursor:
             cooldownRaw = await cursor.fetchone()
+    async with aiosqlite.connect("cooldowns.sqlite") as db:
+        query = f"SELECT unix FROM cooldowntb WHERE user_id = {interaction.user.id} AND cooldown_name='{commandName}'"
+        async with db.execute(query) as cursor:
+            cooldownRaw = await cursor.fetchone()
     if cooldownRaw is None:
         cdvar = timestamproundedf(cooldown)
         cdvar0 = timestamproundedf(0)
         async with aiosqlite.connect("cooldowns.sqlite") as db:
-            sqlquery = f"INSERT INTO 'cooldowntb' (user_id, cooldown_name, unix) VALUES ({0}, '{commandName}', {cdvar})"
+            sqlquery = f"INSERT INTO 'cooldowntb' (user_id, cooldown_name, unix) VALUES ({interaction.user.id}, '{commandName}', {cdvar})"
             await db.execute(sqlquery)
             await db.commit()
         cooldownU = cdvar0
@@ -1751,7 +1756,7 @@ async def fae_megablossoms(interaction : discord.Interaction):
         person = interaction.user
         cdvar1 = timestamproundedf(3)
         v1 = View(timeout=4)
-        b1 = Button(label='🌸')
+        b1 = Button(label='🌟')
         uniqueID = str(uuid.uuid4())
         async def b1_callback(interaction2:discord.Interaction):
             await interaction2.response.defer(ephemeral=True)
@@ -1782,7 +1787,7 @@ async def fae_megablossoms(interaction : discord.Interaction):
             await interaction2.followup.send(f"You gained {number} EXP!", ephemeral=True)
         b1.callback = b1_callback
         v1.add_item(b1)
-        lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a **__MEGA__** Blossom! Click the 🌸 to get 500 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🍒 Cherry Blossom Small Drop!', description='Click the 🌸 button to get 500 exp. But, there is a **3 SECOND** time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
+        lel = await interaction.followup.send(content=f'<@{interaction.user.id}>, dropped a 🌟**__MEGA BLOSSOM__**🌟! Click the 🌟 to get 500 experience. (Expires <t:{cdvar1}:R>)', embed=discord.Embed(title='🌟 **MEGA BLOSSOM DROP!** 🌟', description='Click the **button below** to get 500 exp. But, there is a **10 SECOND** time limit, so hurry! (Can only be claimed once)'), view=v1, ephemeral=False)
         
         historychannel = bot.get_channel(1244686875277398036)
         historyEffected = None
@@ -2096,8 +2101,8 @@ async def cleric_grace(interaction : discord.Interaction, member: discord.Member
 # category: etc
     
 @discord.app_commands.checks.cooldown(1, 15)
-@bot.tree.command(name="duels", description="Duel someone!")
-async def duels(interaction : discord.Interaction, member : discord.Member):
+@bot.tree.command(name="duel", description="Duel someone!")
+async def duel(interaction : discord.Interaction, member : discord.Member):
     if int(interaction.channel.category_id) in closedCategorys and closed == True: return
     if interaction.user.bot:
             return
@@ -2199,7 +2204,7 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
                                         await db.execute(sqlquery2)
                                         await db.commit()
                                 
-                            dele = await interaction2.followup.send(content=f"And the winner between <@{p1.id}> ({p1move.upper()}) and <@{p2.id}> ({p2move.upper()}) is...\n\n **{winnerstr}** Congratulations!")
+                            dele = await interaction2.followup.send(content=f"And the winner is...\n## {winnerstr} Congratulations!")
                             await asyncio.sleep(10)
                             await dele.delete()
                     else:
@@ -2268,7 +2273,7 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
                                         await db.execute(sqlquery2)
                                         await db.commit()
                                 
-                            dele = await interaction2.followup.send(content=f"And the winner between <@{p1.id}> ({p1move.upper()}) and <@{p2.id}> ({p2move.upper()}) is...\n\n **{winnerstr}** Congratulations!")
+                            dele = await interaction2.followup.send(content=f"And the winner is...\n## {winnerstr} Congratulations!")
                             await asyncio.sleep(10)
                             await dele.delete()
                     else:
@@ -2352,7 +2357,7 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
                                 await db.execute(sqlquery2)
                                 await db.commit()
                         
-                    dele = await interaction2.followup.send(content=f"And the winner between <@{p1.id}> ({p1move.upper()}) and <@{p2.id}> ({p2move.upper()}) is...\n\n **{winnerstr}** Congratulations!")
+                    dele = await interaction2.followup.send(content=f"And the winner is...\n## {winnerstr} Congratulations!")
                     await asyncio.sleep(10)
                     await dele.delete()
             else:
@@ -2423,7 +2428,7 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
 
                             
                         
-                    dele = await interaction2.followup.send(content=f"And the winner between <@{p1.id}> ({p1move.upper()}) and <@{p2.id}> ({p2move.upper()}) is...\n\n **{winnerstr}** Congratulations!")
+                    dele = await interaction2.followup.send(content=f"And the winner is...\n## {winnerstr} Congratulations!")
                     await asyncio.sleep(10)
                     await dele.delete()
             else:
@@ -2501,7 +2506,7 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
                                 await db.execute(sqlquery2)
                                 await db.commit()
                         
-                    dele = await interaction2.followup.send(content=f"And the winner between <@{p1.id}> ({p1move.upper()}) and <@{p2.id}> ({p2move.upper()}) is...\n\n **{winnerstr}** Congratulations!")
+                    dele = await interaction2.followup.send(content=f"And the winner is...\n## {winnerstr} Congratulations!")
                     await asyncio.sleep(10)
                     await dele.delete()
             else:
@@ -2572,8 +2577,8 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
                                 await db.commit()
                         
 
-                    dele = await interaction2.followup.send(content=f"And the winner between <@{p1.id}> ({p1move.upper()}) and <@{p2.id}> ({p2move.upper()}) is...\n\n **{winnerstr}** Congratulations!")
-                    await asyncio.sleep(10)
+                    dele = await interaction2.followup.send(content=f"And the winner is...\n## {winnerstr} Congratulations!")
+                    await asyncio.sleep(15)
                     await dele.delete()
             else:
                 await interaction2.followup.send(content="You already made your move!", ephemeral=True)
@@ -2584,9 +2589,9 @@ async def duels(interaction : discord.Interaction, member : discord.Member):
     battleView.add_item(swordButton)
     battleView.add_item(wandButton)
     battleView.add_item(shieldButton)
-    msgi = await interaction.response.send_message(content=f'<@{p2.id}>\n\n<@{p1.id}> has challenged you to a duel.\nPick your move! 🗡️ > 🪄 > 🛡️ > 🗡️\n\n**(EXPIRES IN 5 MINUTES)**', view=battleView)
+    msgi = await interaction.response.send_message(content=f'<@{p2.id}>\n## :crossed_swords: <@{p1.id}> has challenged you to a duel :crossed_swords:\n\n**Pick your move!**\n🗡️ > 🪄 > 🛡️ > 🗡️\n\n**-# (Expires in 2 minutes)**', view=battleView)
     
-    await asyncio.sleep(60*5)
+    await asyncio.sleep(60*2)
     await interaction.delete_original_response()
 
 
@@ -2710,8 +2715,9 @@ async def level(interaction : discord.Interaction):
         async with db.execute(query) as cursor:
             result = await cursor.fetchone()
     expLeft = getLevel(result[0])[1]-result[0]
-    embedSent = discord.Embed(title=f"{interaction.user.display_name}", description=f'''> Class: {getClass(result[1])[0]} {getClass(result[1])[1]} {getClass(result[1])[2]}\n# Level {getLevel(result[0])[0]} ({round(find_percentage(result[0], getLevel(result[0])[2], getLevel(result[0])[1]), 2)}%)\n\nApproximately `{str(math.ceil((expLeft/expPerCooldown)))}` more messages to reach level {getLevel(result[0])[0]+1}.''')
+    embedSent = discord.Embed(title=f"{interaction.user.display_name}", description=f'''> Class: {getClass(result[1])[0]} {getClass(result[1])[2]}\n# Level {getLevel(result[0])[0]} ({round(find_percentage(result[0], getLevel(result[0])[2], getLevel(result[0])[1]), 2)}%)\n\nApproximately `{str(math.ceil((expLeft/expPerCooldown)))}` more messages to reach level {getLevel(result[0])[0]+1}.''')
     await interaction.followup.send(embed=embedSent)
+    # Class icons  {getClass(result[1])[1]}
 
 @bot.tree.command(name="ag_cooldown", description="[Council] Reset the cooldown.")
 async def reset_cd(interaction: discord.Interaction, member:discord.Member):
@@ -2738,7 +2744,7 @@ async def reset_cd(interaction: discord.Interaction, member:discord.Member):
 
     await interaction.followup.send(f"Did it, reset the cooldowns of <@{member.id}>!", ephemeral=True)
 
-@bot.tree.command(name="ag_resetduels", description="[Council] Reset duels.")
+@bot.tree.command(name="ag_resetduels", description="[Council] Reset duel leaderboard.")
 async def reset(interaction: discord.Interaction):
 
     await interaction.response.defer(ephemeral=True)
